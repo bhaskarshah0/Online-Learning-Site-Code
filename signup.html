@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - LearnHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #e67e22;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4a6bff;
+        }
+
+        nav ul li a.active {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Button Styles */
+        .cta-button {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Signup Section Styles */
+        .login {
+            max-width: 450px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .login h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #e67e22;
+        }
+
+        .login-options {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .login-options a {
+            color: #e67e22;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-options a:hover {
+            text-decoration: underline;
+        }
+
+        /* Error Message Styles */
+        .error-message {
+            color: #e74c3c;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+           
+        }
+
+        .success-message {
+            color: #27ae60;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+           
+        }
+
+        /* Password Requirements */
+        .password-requirements {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem;
+            }
+
+            .login {
+                margin: 2rem 1rem;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login {
+                padding: 1.2rem;
+            }
+
+            .form-group input {
+                padding: 0.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">LearnHub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="signup.html" class="active cta-button">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sign-Up Section -->
+    <section class="login">
+        <h2>Create Your Account</h2>
+        <form id="signupForm" class="login-form">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <div class="password-requirements">
+                    Password must be at least 8 characters long
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="cta-button">Sign Up</button>
+        </form>
+        <div class="login-options">
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        </div>
+        <p id="errorMessage" class="error-message"></p>
+        <p id="successMessage" class="success-message"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 LearnHub. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupForm = document.getElementById('signupForm');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const submitButton = signupForm.querySelector('.cta-button');
+
+            // Handle Sign-Up Form Submission
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Get input values
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                // Clear previous messages
+                errorMessage.textContent = '';
+                successMessage.textContent = '';
+
+                // Validate full name
+                if (fullName.length < 2) {
+                    errorMessage.textContent = 'Please enter a valid full name';
+                    return;
+                }
+
+                // Validate email
+                if (!validateEmail(email)) {
+                    errorMessage.textContent = 'Please enter a valid email address';
+                    return;
+                }
+
+                // Validate password
+                if (password.length < 8) {
+                    errorMessage.textContent = 'Password must be at least 8 characters long';
+                    return;
+                }
+
+                // Validate password match
+                if (password !== confirmPassword) {
+                    errorMessage.textContent = 'Passwords do not match';
+                    return;
+                }
+
+                // Check if user already exists
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const existingUser = users.find((user) => user.email.toLowerCase() === email.toLowerCase());
+                
+                if (existingUser) {
+                    errorMessage.textContent = 'This email is already registered';
+                    return;
+                }
+
+                // Disable button during processing
+                submitButton.disabled = true;
+                submitButton.textContent = 'Creating Account...';
+
+                // Simulate API call delay
+                setTimeout(() => {
+    const hashedPassword = CryptoJS.SHA256(password).toString();
+    const newUser = {
+        id: Date.now().toString(),
+    const newUser = {
+        id: crypto.randomUUID(),
+        fullName,
+        email,
+        password: hashedPassword
+    };
+    localStorage.setItem('users', JSON.stringify(users));
+
+    successMessage.textContent = 'Account created! Redirecting...';
+    setTimeout(() => {
+        window.location.href = 'login.html';
+    }, 1500);
+            </script>
+            <script>
+                // Email validation function
+                function validateEmail(email) {
+                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(email);
+                }
+                return re.test(email);
+        });
+
+        // Clear error when user starts typing
+        document.getElementById('fullName').addEventListener('input', clearMessages);
+        document.getElementById('email').addEventListener('input', clearMessages);
+        document.getElementById('password').addEventListener('input', clearMessages);
+        document.getElementById('confirmPassword').addEventListener('input', clearMessages);
+
+        function clearMessages() {
+            errorMessage.textContent = '';
+            successMessage.textContent = '';
+        }
+            }
+        });
+    </script>
+</body>
+
+</html>
